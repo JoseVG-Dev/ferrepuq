@@ -1,22 +1,110 @@
+---
+import Icon from "../components/Icon.jsx";
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="en" data-theme="mytheme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Ferrepuq</title>
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <header class="flex flex-row  items-center bg-secondary text-white p-4">
+      
+        <img
+          src="/SmallLogo.png"
+          alt="Logo pequeño de Mi Empresa"
+          class="h-22 sm:h-12 md:h-14 lg:h-16"
+        />
+        <img
+          src="/BigLogo.svg"
+          alt="Logo de Mi Empresa"
+          class="h-30 sm:h-12 md:h-14 lg:h-16"
+        />
+
+
+          <div class="drawer drawer-end pl-5">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="flex drawer-content ">
+          <!-- Page content here -->
+          <label for="my-drawer" class="btn btn-primary drawer-button"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+          </label>
+        </div>
+        <div class="drawer-side">
+          <label
+            for="my-drawer"
+            aria-label="close sidebar"
+            class="drawer-overlay"></label>
+
+          <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+            <li><a href="/" class="btn btn-soft btn-primary">Inicio</a></li>
+            <li>
+              <a href="/about" class="btn btn-soft btn-primary"
+                >Acerca de nosotros</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    
+    </header>
+
+    <main class="flex-1 p-4">
+      <slot />
+    </main>
+
+    <footer class="bg-secondary text-white p-4">
+      <div class="flex flex-row justify-center px-4 gap-12">
+        <Icon
+          image="/facebook.svg"
+          url="https://www.facebook.com/p/ferrepuq-61560276114678/?locale=es_LA"
+          client:load
+        />
+        <Icon
+          image="/whatsapp.svg"
+          url="https://wa.me/56912345678"
+          client:load
+        />
+        <Icon
+          image="/instagram.svg"
+          url="https://www.instagram.com/ferrepuq_ferreteria/"
+          client:load
+        />
+      </div>
+      <div class="flex flex-row justify-center px-5 sm:flex-row items-center ">
+            <p>© {new Date().getFullYear()} - JosevDev</p>
+           <Icon
+          image="/instagram.svg"
+          url="https://www.instagram.com/ferrepuq_ferreteria/"
+          client:load
+        />
+          </div>
+    </footer>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

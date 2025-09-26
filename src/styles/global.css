@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+ 
+     --font-anton: 'Anton', sans-serif;
+  --font-titillium: 'Titillium Web', sans-serif;
+   --font-sans: var(--font-titillium);
+}
+    
+@plugin "daisyui/theme" {
+  name: "mytheme";
+  default: true; /* set as default */
+  prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
+  color-scheme: light; /* color of browser-provided UI */
+
+ 
+  --color-primary: #f78837; 
+  --color-primary-content: oklch(98% 0.01 240);
+  --color-secondary: #002432;
+  --color-secondary-content: oklch(98% 0.01 200);
+  --color-accent: #26c7b7;
+  --color-accent-content: oklch(98% 0.01 160);
+  
+}

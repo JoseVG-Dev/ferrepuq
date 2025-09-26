@@ -1,11 +1,98 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
+
+import SwiperCarousel from '../components/SwiperCarousel.jsx';
+const images = [
+  '/slide1.jpg',
+  '/slide2.jpg',
+  '/slide3.jpg',
+  '/slide4.jpg',
+  '/slide5.jpg',
+];
+
+const isOpen = (): string => {
+  const now = new Date();
+  const hour = now.toTimeString().split(" ")[0];
+  const day = now.getDay(); // 0=Domingo, 1=Lunes, ..., 6=Sábado
+
+  switch (day) {
+    case 0: // Domingo
+      if (hour >= "10:00:00" && hour <= "13:00:00") {
+        return "Abierto (10:00 - 13:00)";
+      }
+      return "Cerrado";
+
+    case 1: 
+    case 2: 
+    case 3: 
+    case 4: 
+    case 5:
+      if (hour >= "10:00:00" && hour <= "19:00:00") {
+        return "Abierto (10:00 - 19:00)";
+      }
+      return "Cerrado";
+
+    case 6: 
+      if (hour >= "10:00:00" && hour <= "13:00:00") {
+        return "Abierto (10:00 - 13:00)";
+      }
+      if (hour >= "15:00:00" && hour <= "19:00:00") {
+        return "Abierto (15:00 - 19:00)";
+      }
+      return "Cerrado";
+
+    default:
+      return "Cerrado";
+  }
+};
+const estado = isOpen(); 
+
+
 ---
 
+
+
 <Layout>
-	<Welcome />
+
+  <main class="flex flex-col justify-center container mt-10 px-4 space-y-10">
+ <div>
+<SwiperCarousel client:visible {images} />
+ </div>
+ 
+<section class="flex flex-col space-y-4  text-center leading-relaxed text-base">
+
+  <h2 class="font-anton text-primary text-xl sm:text-2xl md:text-3xl">
+    Información de contacto
+  </h2>
+
+  <address class="not-italic text-sm sm:text-base md:text-lg">
+    <p>Email: <a href="mailto:patagonicaspa2020@gmail.com" class="text-accent underline hover:opacity-80">patagonicaspa2020@gmail.com</a></p>
+    <p>Teléfono: <a href="tel:+56997598737" class="text-accent underline hover:opacity-80">+56 9 9759 8737</a></p>
+  </address>
+
+  <div>
+    <h3 class="font-semibold text-base sm:text-lg md:text-xl text-primary">Horarios</h3>
+<p class={estado.includes("Cerrado") ? "text-red-600 font-bold" : "text-green-600 font-bold"}>
+  {estado}
+</p>
+    <ul class="text-sm sm:text-base md:text-lg space-y-1">
+      <li>Lunes a Viernes: 10:00 - 19:00</li>
+      <li>Sábados: 10:00 - 13:00 y 15:00 - 19:00</li>
+      <li>Domingos: 10:00 - 13:00</li>
+    </ul>
+  </div>
+</section>
+    <div class="w-full h-64 sm:h-96">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2392.924932795775!2d-70.90509762255543!3d-53.14744175487805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdb2647c30ffad73%3A0x30d56daa429d479d!2sCapit%C3%A1n%20Juan%20Guillermos%20198-104%2C%20Punta%20Arenas%2C%20Magallanes%20y%20la%20Ant%C3%A1rtica%20Chilena!5e0!3m2!1sen!2scl!4v1758841971112!5m2!1sen!2scl"
+    class="w-full h-full border-0"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>  
+  </main>
+	
 </Layout>
