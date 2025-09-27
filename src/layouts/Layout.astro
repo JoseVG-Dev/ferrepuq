@@ -13,7 +13,7 @@ import Icon from "../components/Icon.jsx";
   </head>
 
   <body class="min-h-screen flex flex-col">
-    <header class="flex flex-row  items-center bg-secondary text-white p-4">
+    <header class="flex flex-row  items-center  bg-secondary text-white p-4">
       
         <img
           src="/SmallLogo.png"
@@ -21,9 +21,9 @@ import Icon from "../components/Icon.jsx";
           class="h-22 sm:h-12 md:h-14 lg:h-16"
         />
         <img
-          src="/BigLogo.svg"
+          src="/BigLogo.webp"
           alt="Logo de Mi Empresa"
-          class="h-30 sm:h-12 md:h-14 lg:h-16"
+          class="h-10 sm:h-12 md:h-14 lg:h-16"
         />
 
 
@@ -70,32 +70,39 @@ import Icon from "../components/Icon.jsx";
       <slot />
     </main>
 
-    <footer class="bg-secondary text-white p-4">
-      <div class="flex flex-row justify-center px-4 gap-12">
+    <footer class="bg-secondary text-white p-4 ">
+<div class="flex justify-center pb-4">
+  <p>Nuestras Redes</p>
+</div>
+      <div class="flex flex-row justify-center px-4 gap-12 ">
+        
         <Icon
-          image="/facebook.svg"
+          image="/facebook.webp"
           url="https://www.facebook.com/p/ferrepuq-61560276114678/?locale=es_LA"
           client:load
         />
         <Icon
-          image="/whatsapp.svg"
+          image="/whatsapp.webp"
           url="https://wa.me/56912345678"
           client:load
         />
         <Icon
-          image="/instagram.svg"
+          image="/instagram.webp"
           url="https://www.instagram.com/ferrepuq_ferreteria/"
           client:load
         />
       </div>
-      <div class="flex flex-row justify-center px-5 sm:flex-row items-center ">
-            <p>© {new Date().getFullYear()} - JosevDev</p>
-           <Icon
-          image="/instagram.svg"
-          url="https://www.instagram.com/ferrepuq_ferreteria/"
-          client:load
-        />
-          </div>
+<div class="divider before:bg-white after:bg-white text-white"></div>
+
+      <div class="flex flex-row justify-center items-center px-5 gap-4">
+  <p>© {new Date().getFullYear()} - Josevg _ Dev</p>
+  <Icon
+    image="/github.webp"
+    url="https://github.com/JoseVG-Dev"
+    client:load
+  />
+</div>
+
     </footer>
   </body>
 </html>

@@ -56,43 +56,64 @@ const estado = isOpen();
 
 <Layout>
 
-  <main class="flex flex-col justify-center container mt-10 px-4 space-y-10">
- <div>
-<SwiperCarousel client:visible {images} />
- </div>
- 
-<section class="flex flex-col space-y-4  text-center leading-relaxed text-base">
+<main class="container mx-auto mt-10 px-4 space-y-10">
+  
+  <!-- Carrusel -->
+<div class="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
+  <SwiperCarousel client:visible {images} />
+</div>
 
-  <h2 class="font-anton text-primary text-xl sm:text-2xl md:text-3xl">
-    Información de contacto
-  </h2>
+  <!-- Sección de contacto + mapa -->
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-  <address class="not-italic text-sm sm:text-base md:text-lg">
-    <p>Email: <a href="mailto:patagonicaspa2020@gmail.com" class="text-accent underline hover:opacity-80">patagonicaspa2020@gmail.com</a></p>
-    <p>Teléfono: <a href="tel:+56997598737" class="text-accent underline hover:opacity-80">+56 9 9759 8737</a></p>
-  </address>
+    <!-- Bloque de contacto -->
+    <div class="flex flex-col space-y-6 text-center lg:text-left leading-relaxed text-base">
+      <h2 class="font-anton text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+        Información de contacto
+      </h2>
 
-  <div>
-    <h3 class="font-semibold text-base sm:text-lg md:text-xl text-primary">Horarios</h3>
-<p class={estado.includes("Cerrado") ? "text-red-600 font-bold" : "text-green-600 font-bold"}>
-  {estado}
-</p>
-    <ul class="text-sm sm:text-base md:text-lg space-y-1">
-      <li>Lunes a Viernes: 10:00 - 19:00</li>
-      <li>Sábados: 10:00 - 13:00 y 15:00 - 19:00</li>
-      <li>Domingos: 10:00 - 13:00</li>
-    </ul>
-  </div>
-</section>
-    <div class="w-full h-64 sm:h-96">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2392.924932795775!2d-70.90509762255543!3d-53.14744175487805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdb2647c30ffad73%3A0x30d56daa429d479d!2sCapit%C3%A1n%20Juan%20Guillermos%20198-104%2C%20Punta%20Arenas%2C%20Magallanes%20y%20la%20Ant%C3%A1rtica%20Chilena!5e0!3m2!1sen!2scl!4v1758841971112!5m2!1sen!2scl"
-    class="w-full h-full border-0"
-    allowfullscreen
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>  
-  </main>
-	
+      <address class="not-italic text-sm sm:text-base md:text-lg lg:text-xl space-y-2">
+        <p>
+          Email: 
+          <a href="mailto:patagonicaspa2020@gmail.com" 
+             class="text-accent underline hover:opacity-80">
+            patagonicaspa2020@gmail.com
+          </a>
+        </p>
+        <p>
+          Teléfono: 
+          <a href="tel:+56997598737" 
+             class="text-accent underline hover:opacity-80">
+            +56 9 9759 8737
+          </a>
+        </p>
+      </address>
+
+      <div>
+        <h3 class="font-semibold text-base sm:text-lg md:text-xl lg:text-2xl text-primary">
+          Horarios
+        </h3>
+        <p class={estado.includes("Cerrado") ? "text-red-600 font-bold" : "text-green-600 font-bold"}>
+          {estado}
+        </p>
+        <ul class="text-sm sm:text-base md:text-lg lg:text-xl space-y-1">
+          <li>Lunes a Viernes: 10:00 - 19:00</li>
+          <li>Sábados: 10:00 - 13:00 y 15:00 - 19:00</li>
+          <li>Domingos: 10:00 - 13:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bloque del mapa -->
+    <div class="w-full h-64 sm:h-80 md:h-96 lg:h-full">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2392.924932795775!2d-70.90509762255543!3d-53.14744175487805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdb2647c30ffad73%3A0x30d56daa429d479d!2sCapit%C3%A1n%20Juan%20Guillermos%20198-104%2C%20Punta%20Arenas%2C%20Magallanes%20y%20la%20Ant%C3%A1rtica%20Chilena!5e0!3m2!1sen!2scl!4v1758841971112!5m2!1sen!2scl"
+        class="w-full h-full border-0 rounded-lg shadow-md"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
+</main>
 </Layout>
