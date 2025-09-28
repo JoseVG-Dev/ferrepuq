@@ -58,15 +58,12 @@ const estado = isOpen();
 
 <main class="container mx-auto mt-10 px-4 space-y-10">
   
-  <!-- Carrusel -->
 <div class="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
   <SwiperCarousel client:visible {images} />
 </div>
 
-  <!-- Sección de contacto + mapa -->
   <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-    <!-- Bloque de contacto -->
     <div class="flex flex-col space-y-6 text-center lg:text-left leading-relaxed text-base">
       <h2 class="font-anton text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl">
         Información de contacto
@@ -90,12 +87,12 @@ const estado = isOpen();
       </address>
 
       <div>
-        <h3 class="font-semibold text-base sm:text-lg md:text-xl lg:text-2xl text-primary">
+        <h3 class=" font-anton  text-base sm:text-lg md:text-xl lg:text-2xl text-primary">
           Horarios
         </h3>
-        <p class={estado.includes("Cerrado") ? "text-red-600 font-bold" : "text-green-600 font-bold"}>
-          {estado}
-        </p>
+        <p class={`font-bold text-sm sm:text-base md:text-lg lg:text-xl ${estado.includes("Cerrado") ? "text-red-600" : "text-green-600"}`}>
+  {estado}
+</p>
         <ul class="text-sm sm:text-base md:text-lg lg:text-xl space-y-1">
           <li>Lunes a Viernes: 10:00 - 19:00</li>
           <li>Sábados: 10:00 - 13:00 y 15:00 - 19:00</li>

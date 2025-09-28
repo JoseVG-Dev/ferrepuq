@@ -7,74 +7,73 @@ import Icon from "../components/Icon.jsx";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Ferrepuq</title>
+    <meta name="description" content="Ferrepuq ofrece todo lo necesario para tu ferretería: herramientas, materiales y asesoría experta." />
+    <title>Ferrepuq - Todo para ferretería en un solo lugar</title>
+    <link rel="canonical" href="https://tu-dominio.com/" />
+<meta property="og:title" content="Ferrepuq - Todo para ferretería en un solo lugar" />
+<meta property="og:description" content="Ferrepuq ofrece herramientas, materiales y asesoría experta para tu ferretería." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tu-dominio.com/" />
+<meta property="og:image" content="https://tu-dominio.com/preview.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ferrepuq - Todo para ferretería en un solo lugar" />
+<meta name="twitter:description" content="Ferrepuq ofrece herramientas, materiales y asesoría experta para tu ferretería." />
+<meta name="twitter:image" content="https://tu-dominio.com/preview.png" />
   </head>
 
-  <body class="min-h-screen flex flex-col">
-    <header class="flex flex-row  items-center  bg-secondary text-white p-4">
-      
-        <img
-          src="/SmallLogo.png"
-          alt="Logo pequeño de Mi Empresa"
-          class="h-22 sm:h-12 md:h-14 lg:h-16"
-        />
-        <img
-          src="/BigLogo.webp"
-          alt="Logo de Mi Empresa"
-          class="h-10 sm:h-12 md:h-14 lg:h-16"
-        />
+  <body class="min-h-screen flex flex-col space-y-10 ">
+   <header class="relative bg-secondary text-white p-4 flex items-center justify-between">
+  <h1 class="sr-only">Ferrepuq - Ferretería online</h1>
 
+  <div> 
+<img 
+  src="/SmallLogo.png" 
+  alt="Icono de la marca" 
+  class="h-20 sm:h-22 md:h-24 lg:h-26 xl:h-28 2xl:h-30 w-auto" 
+/> </div>
 
-          <div class="drawer drawer-end pl-5">
-        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-        <div class="flex drawer-content ">
-          <!-- Page content here -->
-          <label for="my-drawer" class="btn btn-primary drawer-button"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
-          </label>
-        </div>
-        <div class="drawer-side">
-          <label
-            for="my-drawer"
-            aria-label="close sidebar"
-            class="drawer-overlay"></label>
+  <div>
+    <img src="/BigLogo.webp" alt="Nombre" class="h-12 sm:h-14 md:h-16 lg:h-18" />
+  </div>
 
-          <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-            <li><a href="/" class="btn btn-soft btn-primary">Inicio</a></li>
-            <li>
-              <a href="/about" class="btn btn-soft btn-primary"
-                >Acerca de nosotros</a>
-            </li>
-          </ul>
-        </div>
+  <div class="flex items-center">
+    <div class="drawer drawer-end sm:hidden">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <label for="my-drawer" class="btn btn-accent drawer-button">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+               stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+          </svg>
+        </label>
       </div>
+      <div class="drawer-side">
+        <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+          <li><a href="/" class="btn btn-soft btn-accent">Inicio</a></li>
+          <li><a href="/about" class="btn btn-soft btn-accent">Acerca de nosotros</a></li>
+        </ul>
+      </div>
+    </div>
 
-    
-    </header>
+    <nav class="hidden sm:flex space-x-4">
+      <a href="/" class="btn btn-outline btn-accent">Inicio</a>
+      <a href="/about" class="btn btn-outline btn-accent">Acerca de nosotros</a>
+    </nav>
+  </div>
+</header>
+
 
     <main class="flex-1 p-4">
       <slot />
     </main>
 
-    <footer class="bg-secondary text-white p-4 ">
-<div class="flex justify-center pb-4">
-  <p>Nuestras Redes</p>
-</div>
-      <div class="flex flex-row justify-center px-4 gap-12 ">
+    <footer class="bg-secondary text-white px-4 ">
+
+      <div class="flex flex-row justify-center px-4 gap-12 pt-6">
         
         <Icon
           image="/facebook.webp"
