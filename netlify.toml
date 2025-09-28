@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"   # qué comando corre Netlify para generar el sitio
+  publish = "dist"            # carpeta final que se publica
+
+[[redirects]]
+  from = "/*"                 # rutas dinámicas → redirigidas al index
+  to = "/index.html"
+  status = 200
